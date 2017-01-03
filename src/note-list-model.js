@@ -1,3 +1,3 @@
-var List = function () {
+var List = function() {
   this.notes = [];
 };
