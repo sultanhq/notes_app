@@ -43,5 +43,4 @@ function createsNewNote(text) {
     console.log("createsNewNote test passed");
   }
 }
-
-createsNewNote();
+createsNewNote('I like beer');
