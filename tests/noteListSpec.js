@@ -31,3 +31,17 @@ function returnsAllNotes() {
 }
 
 returnsAllNotes();
+
+
+function createsNewNote(text) {
+  list.notes = [];
+  createNote(list,text);
+
+  if (displayNotes(list).length !== 1) {
+    throw new Error("Note not saved");
+  } else {
+    console.log("createsNewNote test passed");
+  }
+}
+
+createsNewNote();
