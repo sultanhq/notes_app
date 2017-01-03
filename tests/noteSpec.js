@@ -34,15 +34,24 @@ function noteMessageExistsUponCreation() {
 
 noteMessageExistsUponCreation();
 
-function noteDisplaysText () {
-  if (note.contents() === "undefined") {
+function noteDisplaysText() {
+  if (contents(note) === "undefined") {
     throw new Error("The function is not defined");
-  }
-  else if (note.contents() !== "Hello World") {
+  } else if (contents(note) !== "Hello World") {
     throw new Error("The note does not contain text");
-  }
-  else {
+  } else {
     console.log("noteDisplaysText test passed");
   }
 }
-noteDisplaysText ();
+noteDisplaysText();
+
+
+function noteContentModule() {
+  if (contents(note) !== "Hello World") {
+    throw new Error("Contents module undefined");
+  } else {
+    console.log("noteContentModule test passed");
+  }
+}
+
+noteContentModule();
