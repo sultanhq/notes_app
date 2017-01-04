@@ -19,7 +19,7 @@ function returnsListModelHtml () {
     throw new Error("Returned incorrect string");
   }
   else {
-    console.log("returnsListModelHtml  passed");
+    console.log("%c returnsListModelHtml  passed", "color: green");
   }
 }
 returnsListModelHtml ();
