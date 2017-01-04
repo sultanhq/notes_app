@@ -10,19 +10,6 @@ function createNewNoteListView() {
 }
 createNewNoteListView();
 
-function returnsListModelHtml() {
-  view.list.notes = [];
-  view.list.notes[0] = new Note("I like beer");
-  view.list.notes[1] = new Note("I like pizza");
-
-  if (htmlList(view.list) !== "<ul><li><div>I like beer</div></li><li><div>I like pizza</div></li></ul>") {
-    throw new Error("Returned incorrect string");
-  } else {
-    console.log("%c returnsListModelHtml  passed", "color: green");
-  }
-}
-returnsListModelHtml();
-
 function handlesAnyNumberOfNotes() {
   view.list.notes = [];
   if (htmlList(view.list) === "") {
@@ -78,3 +65,31 @@ function listConvertedToHtml() {
 }
 
 listConvertedToHtml();
+
+
+(function() {
+
+  function NoteDouble() {
+    this.text = "I like Nutella so so so so so much";
+  }
+
+  function NoteDouble2() {
+    this.text = "I really really REALLY hate jam";
+  }
+
+  function NoteListDouble() {
+    this.notes = [noteDouble, noteDouble2];
+  }
+
+  var noteDouble = new NoteDouble();
+  var noteDouble2 = new NoteDouble2();
+  var noteListDouble = new NoteListDouble();
+
+  if (htmlList(noteListDouble) !== "<ul><li><div>I like Nutella so s</div></li><li><div>I really really REA</div></li></ul>") {
+    throw new Error("Text not returned correctly");
+  } else {
+    console.log("%c truncatedNotesView passed", "color: green");
+  }
+
+
+})();
