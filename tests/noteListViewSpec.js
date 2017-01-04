@@ -69,7 +69,6 @@ function listConvertedToHtml() {
   var noteDouble = new NoteDouble();
   var noteListDouble = new NoteListDouble();
 
-  console.log(noteListDouble);
   if (htmlList(noteListDouble) !== "<ul><li><div>I like Nutella</div></li></ul>") {
     throw new Error("List item has not been created");
   } else {
