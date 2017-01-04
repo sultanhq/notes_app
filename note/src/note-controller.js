@@ -4,11 +4,11 @@
     this.noteList = noteList;
     var note = new Note("favourite drink: beer");
     noteList.saveNote(note);
-    var view = new NoteListView(noteList);
+    this.listView = new NoteListView(noteList);
   };
 
   NoteController.prototype.insertHTML = function(){
-    var html = view.displayHTML();
+    var html = this.listView.displayHTML();
     var element = document.getElementById("app");
     element.innerHTML = html;
   };
