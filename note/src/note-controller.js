@@ -9,8 +9,12 @@
 
   NoteController.prototype.insertHTML = function(){
     var html = this.listView.displayHTML();
-    var element = document.getElementById("app");
+    var element = this.getElement();
     element.innerHTML = html;
+  };
+
+  NoteController.prototype.getElement = function(){
+    return document.getElementById("app");
   };
 
   exports.NoteController = NoteController;
