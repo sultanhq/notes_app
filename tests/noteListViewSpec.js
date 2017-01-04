@@ -34,8 +34,20 @@ function handlesAnyNumberOfNotes() {
 handlesAnyNumberOfNotes();
 
 function checkForListInView() {
-  if (displayNotes(noteList).length !== 1) {
-    throw new Error("Note has not been created")
+
+  function NoteDouble() {
+    this.text = "I like Nutella";
+  }
+
+  function NoteListDouble() {
+    this.notes = [noteDouble];
+  }
+
+  var noteDouble = new NoteDouble();
+  var noteListDouble = new NoteListDouble();
+
+  if (displayNotes(noteListDouble).length !== 1) {
+    throw new Error("Note has not been created");
   } else {
     console.log("%c checkForListInView passed", "color: green");
   }
