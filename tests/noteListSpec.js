@@ -1,46 +1,40 @@
 var list = new List();
 
-function listClassDefined() {
+(function() {
   if (typeof(List) === "undefined") {
     throw new Error("List is not defined");
   } else {
-    console.log("listClassDefined test passed");
+    console.log("%clistClassDefined test passed", "color: green");
   }
-}
-listClassDefined();
+})();
 
-function listStoresNotes() {
+(function() {
   if (list.notes instanceof Array === false) {
     throw new Error("notes object is not an array");
   } else {
-    console.log("listStoresNotes test passed");
+    console.log("%clistStoresNotes test passed", "color: green");
   }
-}
-listStoresNotes();
+})();
 
-function returnsAllNotes() {
-
+(function() {
   list.notes[0] = new Note("I like beer");
   list.notes[1] = new Note("I like pizza");
 
   if (displayNotes(list).length !== 2) {
     throw new Error("Array length is incorrect");
   } else {
-    console.log("returnsAllNotes test passed");
+    console.log("%creturnsAllNotes test passed", "color: green");
   }
-}
+})();
 
-returnsAllNotes();
+(function() {
 
-
-function createsNewNote(text) {
   list.notes = [];
-  createNote(list,text);
+  createNote(list, "I like beer");
 
   if (displayNotes(list).length !== 1) {
     throw new Error("Note not saved");
   } else {
-    console.log("createsNewNote test passed");
+    console.log("%ccreatesNewNote test passed", "color: green");
   }
-}
-createsNewNote('I like beer');
+})();

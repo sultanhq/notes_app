@@ -59,7 +59,7 @@ function listConvertedToHtml() {
   if (htmlList(noteListDouble) !== "<ul><li><div>I like Nutella</div></li></ul>") {
     throw new Error("List item has not been created");
   } else {
-    console.log("%c listConvertedToHtml passed", "color: green");
+    console.log("%clistConvertedToHtml passed", "color: green");
   }
 
 }
@@ -88,7 +88,7 @@ listConvertedToHtml();
   if (htmlList(noteListDouble) !== "<ul><li><div>I like Nutella so s</div></li><li><div>I really really REA</div></li></ul>") {
     throw new Error("Text not returned correctly");
   } else {
-    console.log("%c truncatedNotesView passed", "color: green");
+    console.log("%ctruncatedNotesView passed", "color: green");
   }
 
 
