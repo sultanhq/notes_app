@@ -1,11 +1,10 @@
 var view = new View(new List());
-
 function createNewNoteListView() {
 
   if (typeof(view.list) === "undefined") {
     throw new Error("A new List object wasn't instantiated");
   } else {
-    console.log("createNewNoteListViewtest passed");
+    console.log("%ccreateNewNoteListViewtest passed", "color: green");
   }
 }
 createNewNoteListView();
@@ -15,7 +14,7 @@ function handlesAnyNumberOfNotes() {
   if (htmlList(view.list) === "") {
     throw new Error("Method is incorrectly returning data");
   } else {
-    console.log("handlesAnyNumberOfNotes  passed");
+    console.log("%chandlesAnyNumberOfNotes  passed", "color: green");
   }
 }
 handlesAnyNumberOfNotes();
@@ -36,7 +35,7 @@ function checkForListInView() {
   if (displayNotes(noteListDouble).length !== 1) {
     throw new Error("Note has not been created");
   } else {
-    console.log("%c checkForListInView passed", "color: green");
+    console.log("%ccheckForListInView passed", "color: green");
   }
 }
 
