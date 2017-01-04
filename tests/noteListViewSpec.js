@@ -1,36 +1,69 @@
 var view = new View(new List());
-function createNewNoteListView () {
 
-  if(typeof(view.list) === "undefined" ) {
+function createNewNoteListView() {
+
+  if (typeof(view.list) === "undefined") {
     throw new Error("A new List object wasn't instantiated");
-  }
-  else {
+  } else {
     console.log("createNewNoteListViewtest passed");
   }
 }
-createNewNoteListView ();
+createNewNoteListView();
 
-function returnsListModelHtml () {
+function returnsListModelHtml() {
   view.list.notes = [];
   view.list.notes[0] = new Note("I like beer");
   view.list.notes[1] = new Note("I like pizza");
 
-  if(htmlList(view.list) !== "<ul><li><div>I like beer</div></li><li><div>I like pizza</div></li></ul>") {
+  if (htmlList(view.list) !== "<ul><li><div>I like beer</div></li><li><div>I like pizza</div></li></ul>") {
     throw new Error("Returned incorrect string");
-  }
-  else {
+  } else {
     console.log("%c returnsListModelHtml  passed", "color: green");
   }
 }
-returnsListModelHtml ();
+returnsListModelHtml();
 
-function handlesAnyNumberOfNotes () {
-    view.list.notes = [];
-    if(htmlList(view.list) === "")  {
-      throw new Error("Method is incorrectly returning data");
-    }
-    else {
-      console.log("handlesAnyNumberOfNotes  passed");
-    }
+function handlesAnyNumberOfNotes() {
+  view.list.notes = [];
+  if (htmlList(view.list) === "") {
+    throw new Error("Method is incorrectly returning data");
+  } else {
+    console.log("handlesAnyNumberOfNotes  passed");
+  }
 }
-handlesAnyNumberOfNotes ();
+handlesAnyNumberOfNotes();
+
+function checkForListInView() {
+  if (displayNotes(noteList).length !== 1) {
+    throw new Error("Note has not been created")
+  } else {
+    console.log("%c checkForListInView passed", "color: green");
+  }
+}
+
+checkForListInView();
+
+
+function listConvertedToHtml() {
+
+  function NoteDouble() {
+    this.text = "I like Nutella";
+  }
+
+  function NoteListDouble() {
+    this.notes = [noteDouble];
+  }
+
+  var noteDouble = new NoteDouble();
+  var noteListDouble = new NoteListDouble();
+
+  console.log(noteListDouble);
+  if (htmlList(noteListDouble) !== "<ul><li><div>I like Nutella</div></li></ul>") {
+    throw new Error("List item has not been created");
+  } else {
+    console.log("%c listConvertedToHtml passed", "color: green");
+  }
+
+}
+
+listConvertedToHtml();
