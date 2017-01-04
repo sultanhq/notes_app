@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/DarkChocLatte/futher_javascript/issues"
   },
-  "homepage": "https://github.com/DarkChocLatte/futher_javascript#readme"
+  "homepage": "https://github.com/DarkChocLatte/futher_javascript#readme",
+  "dependencies": {
+    "http-server": "^0.9.0"
+  }
 }
