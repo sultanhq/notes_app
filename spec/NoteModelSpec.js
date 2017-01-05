@@ -1,6 +1,9 @@
 "use strict";
 
-function testNodeModel() {
+( function(windowArg) {
+
+
+function testNoteModel() {
   var text = "Hello, world";
   var note = new Note(text);
   if (note.text !== "Hello, world") {
@@ -8,5 +11,8 @@ function testNodeModel() {
   }
   else {console.log("Note function pass")}
 };
+  windowArg.testNote = testNoteModel
 
-testNodeModel();
+})(this);
+
+testNote();
