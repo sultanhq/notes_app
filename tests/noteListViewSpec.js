@@ -45,18 +45,17 @@ checkForListInView();
 
 function listConvertedToHtml() {
 
-  function NoteDouble() {
-    this.text = "I like Nutella";
-  }
+
 
   function NoteListDouble() {
-    this.notes = [noteDouble];
+    this.notes = [];
   }
 
-  var noteDouble = new NoteDouble();
   var noteListDouble = new NoteListDouble();
 
-  if (htmlList(noteListDouble) !== "<ul><li><div>I like Nutella</div></li></ul>") {
+  createNote(noteListDouble, "I like Nutella");
+
+  if (htmlList(noteListDouble) !== "<ul><li><div><a href='#notes/0' id='0'>I like Nutella</a></div></li></ul>") {
     throw new Error("List item has not been created");
   } else {
     console.log("%clistConvertedToHtml passed", "color: green");
@@ -71,10 +70,12 @@ listConvertedToHtml();
 
   function NoteDouble() {
     this.text = "I like Nutella so so so so so much";
+    this.id = 0;
   }
 
   function NoteDouble2() {
     this.text = "I really really REALLY hate jam";
+    this.id = 1;
   }
 
   function NoteListDouble() {
@@ -84,8 +85,7 @@ listConvertedToHtml();
   var noteDouble = new NoteDouble();
   var noteDouble2 = new NoteDouble2();
   var noteListDouble = new NoteListDouble();
-
-  if (htmlList(noteListDouble) !== "<ul><li><div>I like Nutella so s</div></li><li><div>I really really REA</div></li></ul>") {
+  if (htmlList(noteListDouble) !== "<ul><li><div><a href='#notes/0' id='0'>I like Nutella so s</a></div></li><li><div><a href='#notes/1' id='1'>I really really REA</a></div></li></ul>") {
     throw new Error("Text not returned correctly");
   } else {
     console.log("%ctruncatedNotesView passed", "color: green");
@@ -96,17 +96,30 @@ listConvertedToHtml();
 
 (function() {
 
-  function NoteListDouble() {
-    this.notes = [];
+  function NoteDouble() {
+    this.text = "I like Nutella so so so so so much";
+    this.id = 0;
   }
+
+  function NoteListDouble() {
+    this.notes = [noteDouble];
+  }
+  var noteDouble = new NoteDouble();
   var noteListDouble = new NoteListDouble();
 
-  createNote(noteListDouble, "I like Nutella so so so so so much");
-  
-  if (displayNotes(noteListDouble)[0].number !== 0) {
-    throw new Error("note has not had a number assigned")
+  if (displayNotes(noteListDouble)[0].id !== 0) {
+    throw new Error("note has not had a number assigned");
   } else {
-    console.log("Note has an individual number")
+    console.log("%cNote has an individual number", "color: green");
   }
 
 })();
+
+// (function(){
+//
+//   if (!test) {
+//     throw new Error("Test Error")
+//   } else {
+//     console.log("%cTest sass", "color: green")
+//   }
+// })();
