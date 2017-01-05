@@ -1,23 +1,24 @@
 "use strict";
 
-(function(windowArg){
-
-function testNoteList(){
-
+(function testAddNote(){
   var noteList = new NoteList();
-
   noteList.addNote("Hello, world");
-  if (noteList.notesArr[0].getText() !== "Hello, world") {
-    throw new Error("The note wasn't saved")
+
+  if(noteList.notesArr[0].getText() !== "Hello, world") {
+    throw new Error("Failed: The note wasn't saved");
+  } else {
+    console.log("Passed: The note is saved");
   }
-  else {console.log("The note is saved")}
+})();
 
-};
+(function testGetAllNotes(){
+  var noteList = new NoteList();
+  noteList.addNote("Hello, world");
+  noteList.addNote("Favorite curry: Amok");
 
-windowArg.testNoteList = testNoteList
-})(this);
-
-
-
-
-testNoteList();
+  if(noteList.getAllNotes().includes(noteList.notes[0])){
+    console.log("Passed: It returns all the note models stored in the array.");
+  } else {
+    throw new Error("Failed: It doesn't return all the note models stored in the array.");
+  }
+})();
