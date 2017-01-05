@@ -9,11 +9,11 @@ function testControllerInsertHTML(){
   var noteList = new NoteList
   var listView = new NoteListView(noteList)
   var noteController = new NoteController(noteList)
-  var string = "<ul><li><div>favourite drink: beer</div></li></ul>"
- console.log(noteController.insertHTML())
+  var string = "<ul><li><div>favourite drink: bee</div></li></ul>"
   // noteController.insertHTML();
   assert.isTrue(noteController.insertHTML() === string);
-  
+  console.log("This test returned: " + noteController.insertHTML())
+
 
 
 }

@@ -1,6 +1,7 @@
 'use strict';
 
 (function(exports) {
+  var LIST_NOTE_LENGTH = 20;
 
   function NoteListView(noteList) {
     this._noteList = noteList;
@@ -14,7 +15,7 @@
     var allNotes = this._noteList.seeList();
     var string   = "<ul>";
     for (var i = 0; i < allNotes.length; i++ ) {
-      string += ("<li><div>" + allNotes[i].readNote() + "</div></li>");
+      string += ("<li><div>" + allNotes[i].readNote().slice(0,(LIST_NOTE_LENGTH)) + "</div></li>");
     }
     string += "</ul>";
     return string;
