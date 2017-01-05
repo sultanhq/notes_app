@@ -14,5 +14,14 @@ NoteList.prototype.getAllNotes = function(){
 
 };
 
+NoteList.prototype.getHtmlList = function(){
+    str = "";
+    for(var i = 0; i < this.notesArr.length; i++) {
+      str += "<li><div>" + this.notesArr[i].getText() + "</div></li>";
+    }
+    str = "<ul>" + str + "</ul>";
+    return str;
+};
+
 windowArg.NoteList = NoteList;
 })(this);
