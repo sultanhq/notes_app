@@ -1,4 +1,5 @@
 var view = new View(new List());
+
 function createNewNoteListView() {
 
   if (typeof(view.list) === "undefined") {
@@ -90,5 +91,22 @@ listConvertedToHtml();
     console.log("%ctruncatedNotesView passed", "color: green");
   }
 
+
+})();
+
+(function() {
+
+  function NoteListDouble() {
+    this.notes = [];
+  }
+  var noteListDouble = new NoteListDouble();
+
+  createNote(noteListDouble, "I like Nutella so so so so so much");
+  
+  if (displayNotes(noteListDouble)[0].number !== 0) {
+    throw new Error("note has not had a number assigned")
+  } else {
+    console.log("Note has an individual number")
+  }
 
 })();
