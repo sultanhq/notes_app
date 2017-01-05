@@ -2,8 +2,6 @@
 
   function NoteController(noteList){
     this.noteList = noteList;
-    var note = new Note("favourite drink: beer");
-    noteList.saveNote(note);
     this.listView = new NoteListView(noteList);
   };
 

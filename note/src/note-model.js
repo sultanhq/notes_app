@@ -4,6 +4,7 @@
 
   function Note(text) {
     this._text = text;
+    this.number = null;
   };
 
   Note.prototype.readNote = function() {
