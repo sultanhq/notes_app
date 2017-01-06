@@ -115,11 +115,23 @@ listConvertedToHtml();
 
 })();
 
-// (function(){
-//
-//   if (!test) {
-//     throw new Error("Test Error")
-//   } else {
-//     console.log("%cTest sass", "color: green")
-//   }
-// })();
+(function() {
+  function NoteDouble() {
+    this.text = "I like Nutella so so so so so much";
+    this.id = 0;
+  }
+
+  function NoteListDouble() {
+    this.notes = [noteDouble];
+  }
+  var noteDouble = new NoteDouble();
+  var noteListDouble = new NoteListDouble();
+
+  displayNotes(noteListDouble);
+  view.document.getElementById(0).click();
+  if (!window.location.href.includes("#")) {
+    throw new Error("URL has not changed");
+  } else {
+    console.log("%cURL has hashchanged", "color: green");
+  }
+})();
